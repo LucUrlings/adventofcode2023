@@ -34,7 +34,5 @@ export const parseGamePart2 = (game: string): number | false => {
         else if (cubesByColor.includes('green') && maxGreen < amountOfCubes) maxGreen = amountOfCubes;
     }
 
-
-
     return maxRed * maxBlue * maxGreen
 }
