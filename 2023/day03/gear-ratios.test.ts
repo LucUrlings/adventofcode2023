@@ -102,10 +102,8 @@ describe('Day 1, Part 2', () => {
             const partNumbersStarts = checkForPartNumbersInVicinity(inputString, coordinates)
 
             if(partNumbersStarts.length === 2) {
-                console.log(partNumbersStarts)
                 const first = findFullNumber(inputString, partNumbersStarts[0])
                 const second = findFullNumber(inputString, partNumbersStarts[1])
-                console.log(first, second)
                 result += first * second
             }
 
