@@ -1,8 +1,7 @@
 export type conversionTableMapping = {
     sourceStart: number,
     sourceEnd: number
-    destinationStart: number,
-    // destinationEnd: number
+    destinationStart: number
 }[]
 
 export const buildMappingFromTable = (table: number[][]): conversionTableMapping => {
@@ -12,8 +11,7 @@ export const buildMappingFromTable = (table: number[][]): conversionTableMapping
         numberMapping.push({
             sourceStart: row[1],
             sourceEnd: row[1] + row[2],
-            destinationStart: row[0],
-            // destinationEnd: row[0] + row[2],
+            destinationStart: row[0]
         })
     })
 
@@ -42,12 +40,10 @@ const getDestinationForSource = (source: number, table: conversionTableMapping) 
 
 export const buildInputSeedRanges = (seeds: number[]) => {
     const ranges: {start: number, end: number}[] = []
-    for (let i = 0; i < seeds.length; i++) {
+    for (let i = 0; i < seeds.length; i += 2) {
         const start = seeds[i];
         const length = seeds[i + 1]
         ranges.push({start, end: start + length})
-
-        i++
     }
     return ranges
 }
